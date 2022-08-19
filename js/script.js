@@ -37,10 +37,11 @@ calculator.addEventListener('click', (e) => {
 verifyPin.addEventListener('click', () => {
   const actionLefts = parseInt(actionLeft.innerText) - 1
   actionLeft.innerText = actionLefts
-  if (actionLefts > 0) {
+  if (actionLefts >= 0) {
     const genetatepin = displayPin.value
     const typedPin = typedNumber.value
     if (genetatepin == typedPin) {
+      verifyPin.setAttribute('disabled', true)
       correct.style.display = 'block'
       incorrect.style.display = 'none'
     } else {
